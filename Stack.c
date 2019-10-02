@@ -51,7 +51,13 @@ void init(stack *sp)                    /* For initializing the top variable */
       sp->top = -1;
   }
 
-
+void display(stack *sp)
+{
+     for(int i=0; i < sp->top; i++)
+     {
+          printf("%d\n", item[sp->top]);
+     }
+}
 /* Function prototype or function declaration */
 /* we have passed an asterisk symbol (dereferencing operator) in argument to receive the address i.e pointer variable */
 
@@ -65,11 +71,11 @@ int main()
    stack s1, s2;    /* Creating variable s1 and s2 of datatype stack */
 
    init(&s1);       /* We will do initialization first to avoid garbage values */
-   init(&s2);
+   
 
 int choice, value;
 
-printf("1. Push\n2. Pop\n3. Exit");  /* A display message for users */
+printf("1. Push\n2. Pop\n3. Display\n4. Exit");  /* A display message for users */
 
 while(1)
 
@@ -92,8 +98,9 @@ while(1)
                                }
                             break;
 
-
-                     case 3: exit(0);                         /* To exit the console */
+                     case 3: display(&s1);
+                             break;
+                     case 4: exit(0);                         /* To exit the console */
 
                      default : printf("Invalid choice\n");   /* For invalid choices */
 
