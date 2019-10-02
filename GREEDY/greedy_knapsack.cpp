@@ -1,16 +1,20 @@
 #include<iostream>
+#include<stdlib.h>
 #include<algorithm>
 
 using namespace std;
+
 struct item{            //This is a structure to contain profit and weight of objects
   float profit, weight;
 };
+
 bool cmp(item d1, item d2){ //comparison function for descending order
+  
   int r1 = d1.profit / d1.weight; //sorting profit by weight ratio.
   int r2 = d2.profit / d2.weight;
   return r1 > r2;
 }
-float knapsack(float m,struct item a[], int size){
+float knapsack(float m, struct item a[], int size){
   sort(a, a+size, cmp);    //sort fuction for sorting in descending order.
   cout<<"Your data after sorting"<<endl;
   cout<<"PROFIT | WEIGHT | PROF/WT"<<endl;
@@ -39,7 +43,7 @@ int main(){
   float m = 15.00; //This is the capacity of knapsack.
   item a[] = {{10, 2}, {5,3}, {15, 5}, {7, 7}, {6, 1}, {18, 4}, {3, 1}};//Items in the knapsack i.e, profit along with it's corresponding weight.
   int size = sizeof(a) / sizeof(a[0]);
-  cout<<"PROFIT | WEIGHT | PROF/WT"<<endl;
+  cout<<"PROFIT || WEIGHT || PROF/WT ratio"<<endl;
   for(int i=0; i<size; i++){
     cout<<"    "<<a[i].profit<<"    "<<a[i].weight<<"    "<<a[i].profit/a[i].weight<<endl;
   }
