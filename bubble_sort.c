@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 
 void input(int*p)     //For taking input from user
 
@@ -6,9 +7,9 @@ void input(int*p)     //For taking input from user
 
 	int i;
 
-	for(i=0;i<=4;i++)
+	for(i=0; i<=5; i++)
 
-		scanf("%d",(p+i));
+		scanf("%d", (p+i));
 
 }
 
@@ -18,9 +19,9 @@ void display(int*p)  //For displaying numbers
 
 	int i;
 
-	for(i=0;i<=4;i++)
+	for(i=0; i<=5; i++)
 
-		printf("%d",*(p+i));
+		printf("%d", *(p+i));
 
 }
 
@@ -41,21 +42,21 @@ void sort(int*p)
 
 	int round,t,i;    //Here t is for swapping
 
-	for(round=0;round<=4;round++)
+	for(round=0;round<=5;round++)
 
 	{
 
-		for(i=0;i<=4;i++)
+		for(i=0; i<=5; i++)
 
 			if(*(p+i)>*(p+i+1))
 
 			{
 
-				t=*(p+i);
+				t = *(p+i);
 
-				*(p+i)=*(p+i+1);
+				*(p+i) = *(p+i+1);
 
-				*(p+i+1)=t;
+				*(p+i+1) = t;
 
 			}
 
@@ -69,9 +70,9 @@ int main()
 
 {
 
-	int a[5];
+	int a[6];
 
-	printf("Enter your numbers:");
+	printf("Enter six numbers :\n");
 
 	input(a);
 
